@@ -1,15 +1,12 @@
-FROM ubuntu:16.04
+FROM ubuntu:19.04
 RUN apt-get update
 RUN apt-get install default-jdk -y default-jdk
-RUN cd /home/kupa
 RUN apt-get install tomcat9 -y tomcat9
-RUN cd /home/kupa
 RUN apt-get install maven -y maven
-RUN cd /home/kupa
 RUN apt-get install git -y git
-RUN cd /home/kupa
+WORKDIR /home/kupa
 RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
-RUN cd boxfuse-sample-java-war-hello/
+WORKDIR boxfuse-sample-java-war-hello
 RUN mvn package
 RUN cp hello-1.0.war /var/lib/tomcat9/webapps/
 EXPOSE 80

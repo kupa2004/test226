@@ -1,7 +1,7 @@
 FROM ubuntu:20.04
 RUN apt-get update
 RUN apt-get install default-jdk -y default-jdk
-ADD https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.58/bin/apache-tomcat-9.0.58.tar.gz
+ADD https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.58/bin/apache-tomcat-9.0.58.tar.gz /home/
 WORKDIR /usr/local/src
 ADD apache-tomcat-9.0.58.tar.gz /usr/local/src
 RUN mv apache-tomcat-9.0.58/ /usr/local/tomcat9

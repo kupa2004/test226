@@ -1,5 +1,6 @@
 FROM ubuntu:20.04
 RUN apt-get update
+RUN apt-get install default-jdk -y default-jdk
 ADD jdk-8u201-linux-x64.rpm /usr/local/src
 WORKDIR /usr/local/src
 RUN rpm -ivh jdk-8u201-linux-x64.rpm

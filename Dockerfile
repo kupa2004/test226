@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 RUN apt-get update
 RUN apt-get install default-jdk -y default-jdk
 RUN apt-get install tomcat9 -y tomcat9
@@ -11,4 +11,5 @@ RUN mvn package
 WORKDIR target
 RUN cp hello-1.0.war /var/lib/tomcat9/webapps
 EXPOSE 8080
-CMD ["catalina.sh", "run"]
+ENTRYPOINT ["catalina.sh", "jpda", "run"]
+CMD ["/bin/bash"]

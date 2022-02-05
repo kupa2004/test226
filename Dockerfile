@@ -9,7 +9,6 @@ RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
 WORKDIR boxfuse-sample-java-war-hello
 RUN mvn package
 WORKDIR target
-RUN cp hello-1.0.war /var/lib/tomcat9/webapps/
+RUN cp hello-1.0.war /var/lib/tomcat9/webapps
 EXPOSE 8080
-ENTRYPOINT ["usr/share/tomcat9/bin/catalina.sh", "jpda", "run"]
-CMD []
+CMD ["catalina.sh", "run"]

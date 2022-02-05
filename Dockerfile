@@ -5,8 +5,6 @@ ADD https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.58/bin/apache-tomcat-9.0.58.ta
 WORKDIR /usr/local/src
 ADD apache-tomcat-9.0.58.tar.gz /usr/local/src
 RUN mv apache-tomcat-9.0.58/ /usr/local/tomcat9
-ADD tomcat9.run.sh /usr/local/src
-RUN chmod 755 /usr/local/src/tomcat9.run.sh
 RUN apt-get install maven -y maven
 RUN apt-get install git -y git
 WORKDIR /home
